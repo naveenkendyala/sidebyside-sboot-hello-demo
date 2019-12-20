@@ -8,3 +8,5 @@ target
 bin
 obj
 out
+target/classes/com/hello/sboot/sidebyside/demo/DemoApplication.class
+target/classes/com/hello/sboot/sidebyside/demo/hello/HelloController.class
