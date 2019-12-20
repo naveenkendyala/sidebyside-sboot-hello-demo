@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: springboot-hello-deploy
+  labels:
+    app: springboot-hello
+spec:
+  replicas: 1
+  selector:
+  matchLabels:
+      app: springboot-hello
+  template:
+    metadata:
+      labels:
+        app: springboot-hello
+    spec:
+      containers:
+      - name: springboot-hello-app
+        image: naveenkendyala/springboot-hello:1.0.4   
+        ports:
+          - containerPort: 8080
+        resources:
+          requests: 
+            memory: "130Mi"
+            cpu: "200m" 
+          limits:
+            memory: "150Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /livecheck
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 10
