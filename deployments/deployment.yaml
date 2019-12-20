@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: springboot-hello-app
-        image: naveenkendyala/springboot-hello:1.0.4   
+        image: naveenkendyala/sidebyside-sboot-hello-demo:1.0.0   
         ports:
           - containerPort: 8080
         resources:
