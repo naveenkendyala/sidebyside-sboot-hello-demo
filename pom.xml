@@ -30,11 +30,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
+        </dependency>        
     </dependencies>
 
     <build>
-
         <plugins>
             <!-- The plugin provides several goals to work with a Spring Boot application:
      repackage: create a jar or war file that is auto-executable. 
